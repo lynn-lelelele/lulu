@@ -1,0 +1,8 @@
+interface:
+  display_name: "Lulu"
+  short_description: "生成可直接照读的双语教案、课堂讲稿、习题、答案与完整解析"
+  icon_small: "./assets/icon.svg"
+  brand_color: "#2F6B5F"
+  default_prompt: "Use $lulu to turn the attached source material into a ready-to-read bilingual lesson plan with exercises and full solutions."
+policy:
+  allow_implicit_invocation: true
