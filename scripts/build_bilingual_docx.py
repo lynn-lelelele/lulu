@@ -29,11 +29,11 @@ def normalize_math(text):
             break
         text = changed
     text = re.sub(r"abs\(([^()]*)\)", r"|\1|", text)
-    text = re.sub(r"\bpi\b", "π", text)
+    text = re.sub(r"(?<![A-Za-z])pi(?![A-Za-z])", "π", text)
     text = re.sub(r"(\d)pi", r"\1π", text)
-    text = re.sub(r"\balpha\b", "α", text)
-    text = re.sub(r"\bbeta\b", "β", text)
-    text = re.sub(r"\btheta\b", "θ", text)
+    text = re.sub(r"(?<![A-Za-z])alpha(?![A-Za-z])", "α", text)
+    text = re.sub(r"(?<![A-Za-z])beta(?![A-Za-z])", "β", text)
+    text = re.sub(r"(?<![A-Za-z])theta(?![A-Za-z])", "θ", text)
     text = re.sub(r"([A-Za-z0-9)])\^(\d+)", lambda m: m.group(1) + m.group(2).translate(SUPERSCRIPT), text)
     text = re.sub(r"\^\((\d+)\)", lambda m: m.group(1).translate(SUPERSCRIPT), text)
     text = re.sub(r"(?<=\S)\s+\*\s+(?=\S)", " × ", text)
